@@ -8,10 +8,20 @@ set(CMAKE_CXX_STANDARD 23)
 # Folders for IDEs that support it
 set_property(GLOBAL PROPERTY USE_FOLDERS ON)
 
+include(${CMAKE_BINARY_DIR}/conan_paths.cmake)
+find_package(Boost REQUIRED COMPONENTS program_options)
+
 # Target declaration
 add_executable(GetGeoCoords
     "source/main.cpp"
+    "source/ProgramOptions.cpp"
+    "source/ProgramOptions.hpp"
+)
+target_link_libraries(GetGeoCoords
+    PRIVATE
+    Boost::program_options
 )
 
+# Unit test related
 include(CTest)
 enable_testing()

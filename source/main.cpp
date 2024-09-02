@@ -1,4 +1,6 @@
 
+#include "ProgramOptions.hpp"
+
 #include <iostream>
 #include <string>
 
@@ -11,9 +13,20 @@ auto GetStreetAddress()
     return line;
 }
 
-int main(int, char**)
+int main(int argc, char** argv)
 {
     std::cout << "Hello, from GetGeoCoords!\n";
+
+    auto options = ProgramOptions::Create();
+    options->ParseCommandLine(argc, argv);
+    if (options->RequestedHelp())
+    {
+        options->PrintHelp();
+        return 0;
+    }
+
+    const auto apiKey = options->GetApiKey();
+    std::cout << "API key: " << apiKey << "\n";
 
     auto streetAddress = GetStreetAddress();
     if (streetAddress.empty())

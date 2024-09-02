@@ -1,4 +1,5 @@
 [requires]
+boost/1.86.0
 libcurl/8.1.2@#c0f40219a032539a06b5b1fdb7a5745e
 
 [generators]
@@ -6,4 +7,7 @@ CMakeToolchain
 CMakeDeps
 
 [options]
+boost/1.86.0:header_only=False
+boost/1.86.0:without_test=True
+boost/1.86.0:without_program_options=False
 libcurl/8.1.2@#c0f40219a032539a06b5b1fdb7a5745e:shared=False
