@@ -1,0 +1,9 @@
+[requires]
+libcurl/8.1.2@#c0f40219a032539a06b5b1fdb7a5745e
+
+[generators]
+CMakeToolchain
+CMakeDeps
+
+[options]
+libcurl/8.1.2@#c0f40219a032539a06b5b1fdb7a5745e:shared=False
