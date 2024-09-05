@@ -4,3 +4,4 @@ CMakeuserPresets.json
 
 # folders
 build
+py311_venv
